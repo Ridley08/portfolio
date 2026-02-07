@@ -1,0 +1,49 @@
+/* 全体設定 */
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+/* 中央寄せ */
+header,
+main,
+footer {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* ヘッダー */
+header {
+  background: #bfe0f7;
+  margin-top: 40px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+/* セクション共通 */
+section {
+  background: #ffffff;
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+/* 見出し */
+h1, h2 {
+  margin-top: 0;
+}
+
+/* リスト */
+ul {
+  padding-left: 20px;
+}
+
+/* フッター */
+footer {
+  text-align: center;
+  color: #777;
+  margin-bottom: 40px;
+}
