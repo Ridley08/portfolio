@@ -1,3 +1,4 @@
+/* name   */
 console.log("Hello JavaScript");
 let name = "横山";
 let age = 15;
@@ -26,4 +27,14 @@ const btn = document.getElementById("btn");
 
 btn.addEventListener("click", function () {
   title.textContent = "押されました！";
+});
+
+/*list  */
+const fruits = ["りんご", "みかん", "バナナ"];
+const list = document.getElementById("list");
+
+fruits.map(function (fruit) {
+  const li = document.createElement("li");
+  li.textContent = fruit;
+  list.appendChild(li);
 });
