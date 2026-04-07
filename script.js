@@ -1,40 +1,22 @@
-/* name   */
-console.log("Hello JavaScript");
-let name = "横山";
-let age = 15;
+// スクロールでヘッダーの背景を濃くする
+const header = document.getElementById('header');
 
-console.log(name);
-console.log(age);
-
-function greet(name) {
-  console.log("こんにちは " + name);
-}
-
-greet("横山");
-
-
-console.log(age);
-
-let checkAge = 16;
-
-if (checkAge >= 18) {
-  console.log("大人です");
-} else {
-  console.log("未成年です");
-}
-const title = document.getElementById("title");
-const btn = document.getElementById("btn");
-
-btn.addEventListener("click", function () {
-  title.textContent = "押されました！";
+window.addEventListener('scroll', function () {
+  if (window.scrollY > 60) {
+    header.style.background = 'rgba(20, 20, 20, 0.92)';
+  } else {
+    header.style.background = 'rgba(30, 30, 30, 0.65)';
+  }
 });
 
-/*list  */
-const fruits = ["りんご", "みかん", "バナナ"];
-const list = document.getElementById("list");
-
-fruits.map(function (fruit) {
-  const li = document.createElement("li");
-  li.textContent = fruit;
-  list.appendChild(li);
+// ナビリンクのスムーススクロール（href="#xxx" 対応）
+document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+  anchor.addEventListener('click', function (e) {
+    const target = document.querySelector(this.getAttribute('href'));
+    if (!target) return;
+    e.preventDefault();
+    const offset = header.offsetHeight;
+    const top = target.getBoundingClientRect().top + window.scrollY - offset;
+    window.scrollTo({ top: top, behavior: 'smooth' });
+  });
 });

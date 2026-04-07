@@ -1,66 +1,140 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <title>My Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ridley08's Portfolio</title>
   <link rel="stylesheet" href="style.css">
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <header>
-    <h1>横山諒のポートフォリオ</h1>
-    <p>フロントエンドエンジニア志望</p>
+  <!-- ===== HEADER ===== -->
+  <header class="header" id="header">
+    <div class="header-inner">
+      <a href="#" class="logo">
+        <i class="fas fa-feather-alt logo-icon"></i>
+        <span>Ridley08's<br>Portfolio</span>
+      </a>
+      <nav class="nav">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#works" class="nav-link">Works</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+    </div>
   </header>
 
-  <main>
+  <!-- ===== HERO ===== -->
+  <!-- ヒーロー背景は images/hero.jpg を用意するか、CSS の gradient で表示されます -->
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1 class="hero-title">Ridley08's<br>Portfolio</h1>
+    </div>
+  </section>
 
-    <section>
-      <h2>自己紹介</h2>
-      <p>
-        はじめまして。現在フロントエンドエンジニアを目指して学習中です。<br>
-        HTML / CSS / JavaScript / React を中心に勉強しています。
-      </p>
-    </section>
+  <!-- ===== SERVICE / ABOUT ===== -->
+  <section class="service" id="about">
+    <h2 class="section-title">S e r v i c e</h2>
+    <div class="service-grid">
 
-    <section>
-      <h2>スキル</h2>
-      <ul>
-        <li>HTML / CSS（基礎）</li>
-        <li>JavaScript（基礎）</li>
-        <li>Git / GitHub</li>
-      </ul>
-    </section>
+      <div class="service-card">
+        <h3 class="service-name">コーディング</h3>
+        <p class="service-label">CODING</p>
+        <div class="service-icon">
+          <i class="fas fa-laptop-code"></i>
+        </div>
+        <p class="service-desc">HTML・CSSを使い、ホームページやランディングページを作成します。お客様がお持ちのデザインデータから、忠実にコーディングいたします。</p>
+      </div>
 
-    <section>
-      <h2>制作物</h2>
-      <p>※ 現在準備中</p>
-    </section>
+      <div class="service-card">
+        <h3 class="service-name">Webデザイン</h3>
+        <p class="service-label">WEB DESIGN</p>
+        <div class="service-icon">
+          <i class="fas fa-desktop"></i>
+        </div>
+        <p class="service-desc">お客様のニーズをしっかり汲み取り、閲覧する方の目線に立った丁寧なデザインをご提案いたします。レスポンシブ化にも対応いたします。</p>
+      </div>
 
-    <section>
-      <h2>連絡先</h2>
-      <p>
-        GitHub：<a href="#">準備中</a><br>
-        Email：yokoyama.ryo8@gmail.com
-      </p>
-    </section>
+      <div class="service-card">
+        <h3 class="service-name">画像制作</h3>
+        <p class="service-label">IMAGE CREATION</p>
+        <div class="service-icon">
+          <i class="fas fa-paint-brush"></i>
+        </div>
+        <p class="service-desc">アイコンやバナーが不足していて、イメージに合った素材が見つからない場合、そのような制作にも対応します。</p>
+      </div>
 
-    <section>
-      <h2>JavaScript練習</h2>
+      <div class="service-card">
+        <h3 class="service-name">フロントエンド</h3>
+        <p class="service-label">FRONTEND</p>
+        <div class="service-icon">
+          <i class="fas fa-code"></i>
+        </div>
+        <p class="service-desc">JavaScriptやReactを活用し、インタラクティブで使いやすいUIを実装します。動的なWebアプリケーションの開発にも対応いたします。</p>
+      </div>
 
-      <h1 id="title">こんにちは</h1>
-      <button id="btn">押して</button>
-    </section>
+    </div>
+  </section>
 
-    <ul id="list"></ul>
+  <!-- ===== WORKS ===== -->
+  <section class="works" id="works">
+    <h2 class="section-title works-title">W o r k s</h2>
+    <div class="works-grid">
 
+      <article class="work-card">
+        <div class="work-thumb work-thumb-1">
+          <div class="work-overlay"><span>View</span></div>
+        </div>
+        <div class="work-info">
+          <h3>ポートフォリオサイト</h3>
+          <p>HTML / CSS / JavaScript</p>
+        </div>
+      </article>
 
-  </main>
+      <article class="work-card">
+        <div class="work-thumb work-thumb-2">
+          <div class="work-overlay"><span>View</span></div>
+        </div>
+        <div class="work-info">
+          <h3>ランディングページ</h3>
+          <p>HTML / CSS</p>
+        </div>
+      </article>
 
-  <footer>
-    <p>© 2026 Portfolio</p>
+      <article class="work-card">
+        <div class="work-thumb work-thumb-3">
+          <div class="work-overlay"><span>View</span></div>
+        </div>
+        <div class="work-info">
+          <h3>Webアプリケーション</h3>
+          <p>JavaScript / React</p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="contact" id="contact">
+    <h2 class="section-title">C o n t a c t</h2>
+    <p class="contact-desc">お仕事のご依頼・ご相談はこちらからお気軽にどうぞ。</p>
+    <div class="contact-btns">
+      <a href="https://github.com/Ridley08" target="_blank" class="contact-btn">
+        <i class="fab fa-github"></i> GitHub
+      </a>
+      <a href="mailto:yokoyama.ryo8@gmail.com" class="contact-btn">
+        <i class="fas fa-envelope"></i> Email
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <p>&copy; 2026 Ridley08's Portfolio</p>
   </footer>
-<script src="script.js"></script>
 
+  <script src="script.js"></script>
 </body>
 </html>
