@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ToDoアプリ | Ridley08's Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="header" id="header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <i class="fas fa-feather-alt logo-icon"></i>
+        <span>Ridley08's<br>Portfolio</span>
+      </a>
+      <nav class="nav">
+        <a href="index.html#about" class="nav-link">About</a>
+        <a href="index.html#works" class="nav-link">Works</a>
+        <a href="index.html#contact" class="nav-link">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page-hero">
+    <p class="page-hero-label">WEB APPLICATION</p>
+    <h1 class="page-hero-title">ToDoアプリ</h1>
+  </div>
+
+  <div class="breadcrumb">
+    <a href="index.html">Home</a>
+    <span>›</span>
+    <a href="index.html#works">Works</a>
+    <span>›</span>
+    <a href="works-webapp.html">Webアプリケーション</a>
+    <span>›</span>
+    ToDoアプリ
+  </div>
+
+  <div class="detail-container">
+
+    <a href="works-webapp.html" class="btn-back">
+      <i class="fas fa-arrow-left"></i> Webアプリ一覧へ戻る
+    </a>
+
+    <h1 class="detail-title">ToDoアプリ</h1>
+    <p class="detail-subtitle">WEB APPLICATION / TASK MANAGER</p>
+
+    <div class="detail-thumb">
+      <div class="detail-thumb-bg" style="background: linear-gradient(135deg, #b2dfdb 0%, #3d9090 100%);"></div>
+    </div>
+
+    <div class="detail-body">
+      <div class="detail-desc">
+        <h2>制作概要</h2>
+        <p>タスクの追加・完了チェック・削除ができるシンプルなToDoアプリです。JavaScriptのDOM操作を中心に実装し、LocalStorageを活用してページをリロードしてもデータが保持されるよう工夫しました。</p>
+
+        <h2>こだわりポイント</h2>
+        <p>タスクの追加はEnterキーでも実行できるようにし、操作性を高めました。完了済みタスクは視覚的に区別できるスタイル変化を加え、残タスク数をリアルタイムで表示する機能も実装しています。UIはミニマルにまとめ、誰でも直感的に使えることを重視しました。</p>
+      </div>
+
+      <div class="detail-meta-box">
+        <div class="detail-meta-item">
+          <p class="detail-meta-label">CATEGORY</p>
+          <p class="detail-meta-value">Webアプリケーション</p>
+        </div>
+        <div class="detail-meta-item">
+          <p class="detail-meta-label">DATE</p>
+          <p class="detail-meta-value">2026年3月</p>
+        </div>
+        <div class="detail-meta-item">
+          <p class="detail-meta-label">TECH STACK</p>
+          <div class="detail-tag-list">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">JavaScript</span>
+          </div>
+        </div>
+        <div class="detail-meta-item">
+          <p class="detail-meta-label">LINK</p>
+          <a href="#" class="btn-link">
+            <i class="fas fa-external-link-alt"></i> アプリを見る
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer">
+    <p>&copy; 2026 Ridley08's Portfolio</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
