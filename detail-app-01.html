@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ToDoアプリ | Ridley08's Portfolio</title>
+  <title>HARU ToDo | Ridley08's Portfolio</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
@@ -26,7 +26,7 @@
 
   <div class="page-hero">
     <p class="page-hero-label">WEB APPLICATION</p>
-    <h1 class="page-hero-title">ToDoアプリ</h1>
+    <h1 class="page-hero-title">HARU ToDo</h1>
   </div>
 
   <div class="breadcrumb">
@@ -36,7 +36,7 @@
     <span>›</span>
     <a href="works-webapp.html">Webアプリケーション</a>
     <span>›</span>
-    ToDoアプリ
+    HARU ToDo
   </div>
 
   <div class="detail-container">
@@ -45,20 +45,26 @@
       <i class="fas fa-arrow-left"></i> Webアプリ一覧へ戻る
     </a>
 
-    <h1 class="detail-title">ToDoアプリ</h1>
+    <h1 class="detail-title">HARU ToDo</h1>
     <p class="detail-subtitle">WEB APPLICATION / TASK MANAGER</p>
 
     <div class="detail-thumb">
-      <div class="detail-thumb-bg" style="background: linear-gradient(135deg, #b2dfdb 0%, #3d9090 100%);"></div>
+      <img src="images/todo.jpg" alt="HARU ToDo" class="detail-thumb-bg" style="object-fit: cover; object-position: top; width: 100%; height: 100%;">
     </div>
 
     <div class="detail-body">
       <div class="detail-desc">
         <h2>制作概要</h2>
-        <p>タスクの追加・完了チェック・削除ができるシンプルなToDoアプリです。JavaScriptのDOM操作を中心に実装し、LocalStorageを活用してページをリロードしてもデータが保持されるよう工夫しました。</p>
+        <p>Flask + SQLiteで構築した、デスクトップ・Web両対応のタスク管理アプリです。ポメラニアンをマスコットキャラクターに据えたポップでかわいいデザインが特徴で、シンプルなToDoアプリにとどまらず、カスタムリストやテーマ変更など多彩な機能を実装しました。Web版はRender.comで公開しており、Windows向けのexeファイルも配布しています。</p>
+
+        <h2>主な機能</h2>
+        <p>タスクの追加・完了・重要フラグ・期日設定・並び替えといった基本的なタスク管理機能に加え、カスタムリストとグループによる整理機能を実装しています。デザイン面では16テーマ × 12アクセントカラーの組み合わせによる高いカスタマイズ性を持ち、自分好みの見た目に変更できます。Web版はセッションごとにデータを分離しており、複数の訪問者が同時利用しても干渉しない設計になっています。</p>
 
         <h2>こだわりポイント</h2>
-        <p>タスクの追加はEnterキーでも実行できるようにし、操作性を高めました。完了済みタスクは視覚的に区別できるスタイル変化を加え、残タスク数をリアルタイムで表示する機能も実装しています。UIはミニマルにまとめ、誰でも直感的に使えることを重視しました。</p>
+        <p>PythonとFlaskをベースにしながら、PyInstallerとpywebviewを組み合わせることでWindowsのexe版も配布できる構成にしました。Web版・デスクトップ版で同一のコードベースを共有しており、メンテナンス性を高めています。CSS Custom Propertiesを活用したテーマ切り替えは、クラスの付け替えだけで全体の配色が即座に変わる軽量な実装です。</p>
+
+        <h2>利用上の注意</h2>
+        <p>Web版はRender.comの無料プランで運用しているため、しばらくアクセスがない状態だとサーバーがスリープします。初回アクセス時に30〜60秒ほど待ち時間が発生する場合があります。exe版はコード署名未対応のため、起動時にWindowsのSmartScreen警告が表示されますが、「詳細情報」→「実行」で起動できます。</p>
       </div>
 
       <div class="detail-meta-box">
@@ -73,15 +79,36 @@
         <div class="detail-meta-item">
           <p class="detail-meta-label">TECH STACK</p>
           <div class="detail-tag-list">
-            <span class="tag">HTML</span>
-            <span class="tag">CSS</span>
-            <span class="tag">JavaScript</span>
+            <span class="tag">Python</span>
+            <span class="tag">Flask</span>
+            <span class="tag">SQLite</span>
+            <span class="tag">Jinja2</span>
+            <span class="tag">CSS Custom Properties</span>
+            <span class="tag">PyInstaller</span>
+            <span class="tag">pywebview</span>
+            <span class="tag">gunicorn</span>
+            <span class="tag">Render.com</span>
+          </div>
+        </div>
+        <div class="detail-meta-item">
+          <p class="detail-meta-label">TOOL</p>
+          <div class="detail-tag-list">
+            <span class="tag">VS Code</span>
+            <span class="tag">Claude Code</span>
+            <span class="tag">Photoshop</span>
+            <span class="tag">nanobanana</span>
           </div>
         </div>
         <div class="detail-meta-item">
           <p class="detail-meta-label">LINK</p>
-          <a href="#" class="btn-link">
-            <i class="fas fa-external-link-alt"></i> アプリを見る
+          <a href="https://haru-todo.onrender.com" target="_blank" class="btn-link">
+            <i class="fas fa-external-link-alt"></i> オンラインデモ
+          </a>
+          <a href="https://github.com/Ridley08/haru-todo/releases/tag/v1.0.0" target="_blank" class="btn-link">
+            <i class="fas fa-download"></i> exeダウンロード
+          </a>
+          <a href="https://github.com/Ridley08/haru-todo" target="_blank" class="btn-link">
+            <i class="fab fa-github"></i> ソースコード
           </a>
         </div>
       </div>
