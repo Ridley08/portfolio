@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>クイズアプリ | Ridley08's Portfolio</title>
+  <title>Forest Academy Quiz | Ridley08's Portfolio</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
@@ -26,7 +26,7 @@
 
   <div class="page-hero">
     <p class="page-hero-label">WEB APPLICATION</p>
-    <h1 class="page-hero-title">クイズアプリ</h1>
+    <h1 class="page-hero-title">Forest Academy Quiz</h1>
   </div>
 
   <div class="breadcrumb">
@@ -36,7 +36,7 @@
     <span>›</span>
     <a href="works-webapp.html">Webアプリケーション</a>
     <span>›</span>
-    クイズアプリ
+    Forest Academy Quiz
   </div>
 
   <div class="detail-container">
@@ -45,20 +45,23 @@
       <i class="fas fa-arrow-left"></i> Webアプリ一覧へ戻る
     </a>
 
-    <h1 class="detail-title">クイズアプリ</h1>
+    <h1 class="detail-title">Forest Academy Quiz</h1>
     <p class="detail-subtitle">WEB APPLICATION / QUIZ</p>
 
     <div class="detail-thumb">
-      <div class="detail-thumb-bg" style="background: linear-gradient(135deg, #bbdefb 0%, #3d72b0 100%);"></div>
+      <img src="images/quiz.jpg" alt="Forest Academy Quiz" class="detail-thumb-bg" style="object-fit: cover; object-position: top; width: 100%; height: 100%;">
     </div>
 
     <div class="detail-body">
       <div class="detail-desc">
         <h2>制作概要</h2>
-        <p>4択形式の選択式クイズWebアプリケーションです。問題はJavaScriptの配列で管理し、ランダム出題・正誤判定・スコア集計・結果表示の一連の流れをすべてVanilla JSで実装しました。</p>
+        <p>動物をテーマにした4択クイズWebアプリです。300問のバンクから毎回10問をランダム抽出し、難易度3段階（かんたん・ふつう・むずかしい）に対応。問題・選択肢ともに毎回シャッフルされるため、約2兆通りの組み合わせが生まれ、何度遊んでも同じ体験にならないリプレイ性の高い設計になっています。サーバーもAPIも不要な完全静的ファイル構成で、GitHubPagesなどで即デプロイできます。</p>
 
-        <h2>こだわりポイント</h2>
-        <p>問題と選択肢は毎回シャッフルされるため、繰り返し遊んでも楽しめる設計にしています。正解・不正解のフィードバックはアニメーションで明確に表示し、ユーザーが直感的に結果を把握できるようにしました。全問終了後には正答率とコメントを表示するリザルト画面を用意し、学習意欲を高める工夫も取り入れています。</p>
+        <h2>主な機能</h2>
+        <p>正誤判定時にはアニメーションフィードバックを表示し、直感的に結果を把握できます。マスコットのフクロウキャラクターは画像3種・アニメーション3種を持ち、回答状況に応じてリアクションします。また、Web Speech APIを活用した日本語男性音声による問題読み上げ機能も実装しており、学習補助としても活用できます。全問終了後はスコアに応じて4パターンのリザルト画像が表示され、SVGアニメーションによるスコアリング演出でゲームとしての達成感を高めています。</p>
+
+        <h2>デザインのこだわり</h2>
+        <p>「Forest Academy」というコンセプトに合わせ、深い森の緑・琥珀・パーチメントクリームを基調としたカラーパレットを採用。全画面背景にはオリジナルのForest Academyイラストを使用し、世界観を統一しました。フォントにはCinzelとNoto Serif JPを組み合わせ、アカデミックでありながら温かみのある雰囲気を演出しています。</p>
       </div>
 
       <div class="detail-meta-box">
@@ -71,17 +74,28 @@
           <p class="detail-meta-value">2026年4月</p>
         </div>
         <div class="detail-meta-item">
+          <p class="detail-meta-label">FILE</p>
+          <div class="detail-tag-list">
+            <span class="tag">index.html</span>
+            <span class="tag">style.css</span>
+            <span class="tag">script.js</span>
+            <span class="tag">images/</span>
+          </div>
+        </div>
+        <div class="detail-meta-item">
           <p class="detail-meta-label">TECH STACK</p>
           <div class="detail-tag-list">
             <span class="tag">HTML</span>
             <span class="tag">CSS</span>
-            <span class="tag">JavaScript</span>
+            <span class="tag">Vanilla JavaScript</span>
+            <span class="tag">Web Speech API</span>
+            <span class="tag">Google Fonts</span>
           </div>
         </div>
         <div class="detail-meta-item">
           <p class="detail-meta-label">LINK</p>
-          <a href="#" class="btn-link">
-            <i class="fas fa-external-link-alt"></i> アプリを見る
+          <a href="https://github.com/Ridley08/forest-academy-quiz" target="_blank" class="btn-link">
+            <i class="fab fa-github"></i> ソースコード
           </a>
         </div>
       </div>
