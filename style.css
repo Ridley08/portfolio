@@ -115,6 +115,27 @@ a {
   color: #fff;
 }
 
+.hero-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 36px;
+  padding: 14px 40px;
+  background: #fff;
+  color: #333;
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  border-radius: 2px;
+  transition: background 0.25s, color 0.25s, transform 0.2s;
+  text-shadow: none;
+}
+
+.hero-cta-btn:hover {
+  background: rgba(255, 255, 255, 0.85);
+  transform: translateY(-2px);
+}
+
 .hero-catchcopy {
   font-size: clamp(0.78rem, 2vw, 1rem);
   font-weight: 400;
@@ -267,6 +288,84 @@ a {
   font-size: 0.68rem;
   letter-spacing: 0.18em;
   opacity: 0.7;
+}
+
+/* ========================================
+   PRICE
+======================================== */
+.price {
+  background: #fff;
+  padding: 88px 24px;
+}
+
+.price-grid {
+  max-width: 900px;
+  margin: 0 auto 32px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.price-card {
+  border: 1px solid #e5e5e5;
+  border-radius: 3px;
+  padding: 28px 20px;
+  text-align: center;
+  transition: box-shadow 0.25s, transform 0.25s;
+}
+
+.price-card:hover {
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
+  transform: translateY(-3px);
+}
+
+.price-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  color: #888;
+  margin-bottom: 14px;
+  font-weight: 700;
+}
+
+.price-amount {
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: #333;
+  line-height: 1.2;
+  margin-bottom: 14px;
+}
+
+.price-amount span {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.price-desc {
+  font-size: 0.72rem;
+  color: #888;
+  line-height: 1.75;
+}
+
+.price-note {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 0.75rem;
+  color: #aaa;
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 900px) {
+  .price-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .price-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
 }
 
 /* ========================================
@@ -695,6 +794,43 @@ a {
   flex-wrap: wrap;
   gap: 6px;
   margin-top: 6px;
+}
+
+.detail-story {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.story-item {
+  background: #f8f8f8;
+  border-left: 3px solid #333;
+  padding: 16px 20px;
+  border-radius: 0 3px 3px 0;
+}
+
+.story-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #333;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.story-label .fas {
+  font-size: 0.68rem;
+  color: #6b9b6b;
+}
+
+.story-item p:last-child {
+  font-size: 0.85rem;
+  color: #555;
+  line-height: 1.9;
+  margin-bottom: 0;
 }
 
 .btn-link {
