@@ -219,6 +219,122 @@ a {
 }
 
 /* ========================================
+   ABOUT PROFILE (inside service section)
+======================================== */
+.about-profile {
+  max-width: 780px;
+  margin: 56px auto 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 36px;
+  padding: 36px 40px;
+  border: 1px solid #e8e8e8;
+  border-radius: 3px;
+  background: #fafafa;
+}
+
+.about-profile-avatar {
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #2d3e2f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.about-avatar-img {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+  filter: invert(1);
+}
+
+.about-profile-name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 2px;
+}
+
+.about-profile-tagline {
+  font-size: 0.72rem;
+  color: #999;
+  letter-spacing: 0.1em;
+  margin-bottom: 14px;
+}
+
+.about-profile-text {
+  font-size: 0.82rem;
+  color: #555;
+  line-height: 1.9;
+}
+
+@media (max-width: 640px) {
+  .about-profile {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 28px 24px;
+    gap: 20px;
+  }
+}
+
+/* ========================================
+   RECOMMEND
+======================================== */
+.recommend {
+  background: #2d3e2f;
+  padding: 64px 24px;
+}
+
+.recommend-inner {
+  max-width: 680px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.recommend-heading {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.1em;
+  margin-bottom: 32px;
+  opacity: 0.9;
+}
+
+.recommend-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px 32px;
+  text-align: left;
+}
+
+.recommend-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.6;
+}
+
+.recommend-list li .fas {
+  color: #8fbd8f;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+@media (max-width: 540px) {
+  .recommend-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ========================================
    WORKS (index - category cards)
 ======================================== */
 .works {
