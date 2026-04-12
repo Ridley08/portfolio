@@ -48,10 +48,19 @@
     <h1 class="detail-title">Webバナーデザイン</h1>
     <p class="detail-subtitle">IMAGE CREATION / BANNER</p>
 
-    <!-- 2枚並べ -->
+    <!-- 2枚並べ（クリックで拡大） -->
     <div class="detail-thumb-double">
-      <img src="images/maguro-banner1.jpeg" alt="マグロバナー1">
-      <img src="images/maguro-banner2.jpeg" alt="マグロバナー2">
+      <img src="images/maguro-banner1.jpeg" alt="マグロバナー1" class="lightbox-trigger">
+      <img src="images/maguro-banner2.jpeg" alt="マグロバナー2" class="lightbox-trigger">
+    </div>
+
+    <!-- ライトボックス -->
+    <div class="lightbox" id="lightbox">
+      <button class="lightbox-close" id="lightboxClose">&times;</button>
+      <div class="lightbox-img-wrap">
+        <img class="lightbox-img" id="lightboxImg" src="" alt="">
+      </div>
+      <p class="lightbox-hint">スクロールでズーム　／　クリックで閉じる</p>
     </div>
 
     <div class="detail-body">
@@ -93,5 +102,77 @@
   </footer>
 
   <script src="script.js"></script>
+  <script>
+    (function () {
+      const lightbox   = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightboxImg');
+      const closeBtn   = document.getElementById('lightboxClose');
+      const triggers   = document.querySelectorAll('.lightbox-trigger');
+      let scale = 1;
+
+      // 画像クリックで開く
+      triggers.forEach(function (img) {
+        img.addEventListener('click', function () {
+          lightboxImg.src = this.src;
+          lightboxImg.alt = this.alt;
+          scale = 1;
+          lightboxImg.style.transform = 'scale(1)';
+          lightbox.classList.add('active');
+          document.body.style.overflow = 'hidden';
+        });
+      });
+
+      // 背景・閉じるボタンで閉じる
+      function closeLightbox() {
+        lightbox.classList.remove('active');
+        lightboxImg.src = '';
+        scale = 1;
+        document.body.style.overflow = '';
+      }
+      closeBtn.addEventListener('click', closeLightbox);
+      lightbox.addEventListener('click', function (e) {
+        if (e.target === lightbox || e.target.classList.contains('lightbox-hint')) {
+          closeLightbox();
+        }
+      });
+
+      // ESCキーで閉じる
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeLightbox();
+      });
+
+      // マウスホイールでズーム
+      lightbox.addEventListener('wheel', function (e) {
+        e.preventDefault();
+        scale += e.deltaY < 0 ? 0.15 : -0.15;
+        scale = Math.min(Math.max(scale, 0.5), 5);
+        lightboxImg.style.transform = 'scale(' + scale + ')';
+      }, { passive: false });
+
+      // ピンチズーム（タッチ端末）
+      let lastDist = 0;
+      lightbox.addEventListener('touchstart', function (e) {
+        if (e.touches.length === 2) {
+          lastDist = Math.hypot(
+            e.touches[0].clientX - e.touches[1].clientX,
+            e.touches[0].clientY - e.touches[1].clientY
+          );
+        }
+      });
+      lightbox.addEventListener('touchmove', function (e) {
+        if (e.touches.length === 2) {
+          e.preventDefault();
+          const dist = Math.hypot(
+            e.touches[0].clientX - e.touches[1].clientX,
+            e.touches[0].clientY - e.touches[1].clientY
+          );
+          scale *= dist / lastDist;
+          scale = Math.min(Math.max(scale, 0.5), 5);
+          lightboxImg.style.transform = 'scale(' + scale + ')';
+          lastDist = dist;
+        }
+      }, { passive: false });
+    })();
+  </script>
 </body>
 </html>
