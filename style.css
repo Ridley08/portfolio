@@ -455,6 +455,31 @@ a {
 /* ========================================
    DETAIL PAGE
 ======================================== */
+
+/* 画像2枚並べ用 */
+.detail-thumb-double {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 48px;
+}
+
+.detail-thumb-double img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 3px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 640px) {
+  .detail-thumb-double {
+    grid-template-columns: 1fr;
+  }
+}
+
+
 .detail-container {
   max-width: 940px;
   margin: 0 auto;
