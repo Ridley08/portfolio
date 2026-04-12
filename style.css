@@ -115,6 +115,15 @@ a {
   color: #fff;
 }
 
+.hero-catchcopy {
+  font-size: clamp(0.78rem, 2vw, 1rem);
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  margin-bottom: 16px;
+  opacity: 0.88;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+}
+
 .hero-title {
   font-size: clamp(2.4rem, 6vw, 4rem);
   font-weight: 900;
@@ -129,7 +138,7 @@ a {
 .section-title {
   font-size: 1.75rem;
   font-weight: 300;
-  letter-spacing: 0.35em;
+  letter-spacing: 0.15em;
   text-align: center;
   margin-bottom: 56px;
 }
@@ -193,18 +202,11 @@ a {
 ======================================== */
 .works {
   padding: 88px 24px;
-  background-color: #7a8c6a;
-  background-image: repeating-linear-gradient(
-    -45deg,
-    transparent,
-    transparent 14px,
-    rgba(255, 255, 255, 0.07) 14px,
-    rgba(255, 255, 255, 0.07) 28px
-  );
+  background: #f5f5f5;
 }
 
 .works-title {
-  color: #fff;
+  color: #333;
 }
 
 .works-category-grid {
@@ -217,17 +219,17 @@ a {
 
 .works-category-card {
   display: block;
-  background: rgba(255, 255, 255, 0.12);
+  background: #fff;
   border-radius: 3px;
   overflow: hidden;
-  color: #fff;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  color: #333;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   transition: transform 0.25s, box-shadow 0.25s;
 }
 
 .works-category-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 36px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 10px 36px rgba(0, 0, 0, 0.15);
 }
 
 .works-category-thumb {
@@ -252,7 +254,7 @@ a {
 
 .works-category-info {
   padding: 18px 20px;
-  background: rgba(0, 0, 0, 0.18);
+  background: transparent;
 }
 
 .works-category-info h3 {
@@ -274,6 +276,36 @@ a {
   background: #fff;
   padding: 88px 24px;
   text-align: center;
+}
+
+.contact-catch {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #333;
+  letter-spacing: 0.04em;
+  margin-bottom: 24px;
+}
+
+.contact-features {
+  display: flex;
+  gap: 28px;
+  justify-content: center;
+  flex-wrap: wrap;
+  list-style: none;
+  margin-bottom: 28px;
+}
+
+.contact-features li {
+  font-size: 0.88rem;
+  color: #555;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.contact-features li .fas.fa-check {
+  color: #6b9b6b;
+  font-size: 0.78rem;
 }
 
 .contact-desc {
@@ -303,6 +335,16 @@ a {
 
 .contact-btn:hover {
   background: #333;
+  color: #fff;
+}
+
+.contact-btn-primary {
+  background: #333;
+  color: #fff;
+}
+
+.contact-btn-primary:hover {
+  background: #555;
   color: #fff;
 }
 
