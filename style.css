@@ -59,11 +59,15 @@ a {
   font-size: 1.6rem;
 }
 
-.logo-icon-img {
+.logo .logo-icon-img {
   width: 36px;
   height: 36px;
+  max-width: 36px;
+  max-height: 36px;
+  flex-shrink: 0;
+  display: block;
   object-fit: contain;
-  filter: brightness(0) invert(1);
+  filter: invert(1);
 }
 
 .nav {
