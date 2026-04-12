@@ -54,15 +54,6 @@
       <img src="images/maguro-banner2.jpeg" alt="マグロバナー2" class="lightbox-trigger">
     </div>
 
-    <!-- ライトボックス -->
-    <div class="lightbox" id="lightbox">
-      <button class="lightbox-close" id="lightboxClose">&times;</button>
-      <div class="lightbox-img-wrap">
-        <img class="lightbox-img" id="lightboxImg" src="" alt="">
-      </div>
-      <p class="lightbox-hint">スクロールでズーム　／　クリックで閉じる</p>
-    </div>
-
     <div class="detail-body">
       <div class="detail-desc">
         <h2>制作概要</h2>
@@ -95,48 +86,61 @@
       </div>
     </div>
 
-  </div>
+  </div><!-- /detail-container -->
 
   <footer class="footer">
     <p>&copy; 2026 Ridley08's Portfolio</p>
   </footer>
 
+  <!-- ライトボックス（body直下に配置） -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose">&times;</button>
+    <img class="lightbox-img" id="lightboxImg" src="" alt="">
+    <p class="lightbox-hint">スクロール or ピンチ でズーム　／　背景クリック・ESC で閉じる</p>
+  </div>
+
   <script src="script.js"></script>
   <script>
     (function () {
-      const lightbox   = document.getElementById('lightbox');
+      const lightbox    = document.getElementById('lightbox');
       const lightboxImg = document.getElementById('lightboxImg');
-      const closeBtn   = document.getElementById('lightboxClose');
-      const triggers   = document.querySelectorAll('.lightbox-trigger');
+      const closeBtn    = document.getElementById('lightboxClose');
+      const triggers    = document.querySelectorAll('.lightbox-trigger');
       let scale = 1;
 
-      // 画像クリックで開く
+      function openLightbox(src, alt) {
+        lightboxImg.src = src;
+        lightboxImg.alt = alt;
+        scale = 1;
+        lightboxImg.style.transform = 'scale(1)';
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeLightbox() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+        setTimeout(function () { lightboxImg.src = ''; }, 300);
+        scale = 1;
+      }
+
       triggers.forEach(function (img) {
         img.addEventListener('click', function () {
-          lightboxImg.src = this.src;
-          lightboxImg.alt = this.alt;
-          scale = 1;
-          lightboxImg.style.transform = 'scale(1)';
-          lightbox.classList.add('active');
-          document.body.style.overflow = 'hidden';
+          openLightbox(this.src, this.alt);
         });
       });
 
-      // 背景・閉じるボタンで閉じる
-      function closeLightbox() {
-        lightbox.classList.remove('active');
-        lightboxImg.src = '';
-        scale = 1;
-        document.body.style.overflow = '';
-      }
-      closeBtn.addEventListener('click', closeLightbox);
+      closeBtn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        closeLightbox();
+      });
+
       lightbox.addEventListener('click', function (e) {
-        if (e.target === lightbox || e.target.classList.contains('lightbox-hint')) {
+        if (e.target === lightbox || e.target === document.querySelector('.lightbox-hint')) {
           closeLightbox();
         }
       });
 
-      // ESCキーで閉じる
       document.addEventListener('keydown', function (e) {
         if (e.key === 'Escape') closeLightbox();
       });
@@ -144,12 +148,12 @@
       // マウスホイールでズーム
       lightbox.addEventListener('wheel', function (e) {
         e.preventDefault();
-        scale += e.deltaY < 0 ? 0.15 : -0.15;
-        scale = Math.min(Math.max(scale, 0.5), 5);
+        scale += e.deltaY < 0 ? 0.2 : -0.2;
+        scale = Math.min(Math.max(scale, 0.5), 6);
         lightboxImg.style.transform = 'scale(' + scale + ')';
       }, { passive: false });
 
-      // ピンチズーム（タッチ端末）
+      // ピンチズーム（スマホ）
       let lastDist = 0;
       lightbox.addEventListener('touchstart', function (e) {
         if (e.touches.length === 2) {
@@ -167,7 +171,7 @@
             e.touches[0].clientY - e.touches[1].clientY
           );
           scale *= dist / lastDist;
-          scale = Math.min(Math.max(scale, 0.5), 5);
+          scale = Math.min(Math.max(scale, 0.5), 6);
           lightboxImg.style.transform = 'scale(' + scale + ')';
           lastDist = dist;
         }
