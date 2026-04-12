@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" href="images/portfolio-icon.png">
   <title>HARU ToDo | Ridley08's Portfolio</title>
-  <link rel="stylesheet" href="style.css?v=5">
+  <link rel="stylesheet" href="style.css?v=6">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
@@ -55,6 +55,15 @@
 
     <div class="detail-body">
       <div class="detail-desc">
+
+        <div class="detail-target-row">
+          <span class="target-badge-label">対象</span>
+          <span class="target-badge-value">個人ユーザー・小規模チーム ／ タスク管理習慣を始めたい方</span>
+        </div>
+
+        <h2>制作背景</h2>
+        <p>市場のToDoアプリは機能過多になりがちで「どこから使えばいいか分からない」という問題がある。シンプルに始められて、使うほどに自分色にカスタマイズできる──「長く使い続けられるタスク管理ツール」を設計することが本制作の出発点だった。</p>
+
         <h2>制作概要</h2>
         <p>Flask + SQLiteで構築した、デスクトップ・Web両対応のタスク管理アプリです。ポメラニアンをマスコットキャラクターに据えたポップでかわいいデザインが特徴で、シンプルなToDoアプリにとどまらず、カスタムリストやテーマ変更など多彩な機能を実装しました。Web版はRender.comで公開しており、Windows向けのexeファイルも配布しています。</p>
 
@@ -64,29 +73,37 @@
         <h2>こだわりポイント</h2>
         <p>PythonとFlaskをベースにしながら、PyInstallerとpywebviewを組み合わせることでWindowsのexe版も配布できる構成にしました。Web版・デスクトップ版で同一のコードベースを共有しており、メンテナンス性を高めています。CSSを活用したテーマ切り替えは、クラスの付け替えだけで全体の配色が即座に変わる軽量な実装です。</p>
 
-        <h2>利用上の注意</h2>
-        <p>Web版はRender.comの無料プランで運用しているため、しばらくアクセスがない状態だとサーバーがスリープします。初回アクセス時に30〜60秒ほど待ち時間が発生する場合があります。exe版はコード署名未対応のため、起動時にWindowsのSmartScreen警告が表示されますが、「詳細情報」→「実行」で起動できます。</p>
+        <h2>ユーザーへの価値</h2>
+        <p>直感的なUIでタスク管理のハードルを下げ、カスタマイズ機能で「使い続けたくなる」設計にしました。Web版・デスクトップexe版の両対応により、どの環境でも同じ使い心地を実現しています。「機能を絞る」という設計判断そのものが、ストレスフリーな継続利用というUX価値につながっています。</p>
 
         <div class="case-study">
           <div class="case-item">
             <p class="case-label"><i class="fas fa-question-circle"></i> 課題</p>
-            <p class="case-text">既存のToDoアプリは機能がシンプルすぎて飽きやすく、習慣化につながらない。「続けたくなる」仕掛けをUIに組み込む必要があった。</p>
+            <p class="case-text">既存のToDoアプリは機能が多すぎて使いにくく、習慣化につながらない。「続けたくなる」仕掛けをUIに組み込む必要があった。</p>
           </div>
           <div class="case-item">
-            <p class="case-label"><i class="fas fa-tools"></i> 施策</p>
-            <p class="case-text">16テーマ×12アクセントカラーのカスタマイズ機能を実装し「自分のアプリ」感を演出。マスコットキャラと豊富な機能でゲーム感覚を付与。</p>
+            <p class="case-label"><i class="fas fa-tools"></i> 解決策</p>
+            <p class="case-text">16テーマ×12アクセントカラーで「自分のアプリ」感を演出。必要機能に絞ったUIと、マスコットキャラによる親しみやすさで継続動機を設計。</p>
           </div>
           <div class="case-item">
             <p class="case-label"><i class="fas fa-check-circle"></i> 結果</p>
-            <p class="case-text">Web版・デスクトップexe版の両対応を実現し、どの環境でも使えるタスク管理アプリが完成。継続動機をUIで設計するアプローチを習得。</p>
+            <p class="case-text">Web版・exe版の両対応でどの環境でも使える実用ツールが完成。「機能より体験」を重視した設計が、タスク管理の本質的な価値につながった。</p>
           </div>
         </div>
+
+        <h2>利用上の注意</h2>
+        <p>Web版はRender.comの無料プランで運用しているため、しばらくアクセスがない状態だとサーバーがスリープします。初回アクセス時に30〜60秒ほど待ち時間が発生する場合があります。exe版はコード署名未対応のため、起動時にWindowsのSmartScreen警告が表示されますが、「詳細情報」→「実行」で起動できます。</p>
+
       </div>
 
       <div class="detail-meta-box">
         <div class="detail-meta-item">
           <p class="detail-meta-label">CATEGORY</p>
           <p class="detail-meta-value">Webアプリケーション</p>
+        </div>
+        <div class="detail-meta-item">
+          <p class="detail-meta-label">TARGET</p>
+          <p class="detail-meta-value">個人・小規模チーム</p>
         </div>
         <div class="detail-meta-item">
           <p class="detail-meta-label">DATE</p>

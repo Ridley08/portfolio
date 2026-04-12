@@ -950,6 +950,35 @@ a {
 }
 
 /* ========================================
+   TARGET ROW (detail pages)
+======================================== */
+.detail-target-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 36px;
+  padding: 13px 18px;
+  background: #f0f5f0;
+  border-radius: 3px;
+  border-left: 3px solid #6b9b6b;
+}
+
+.target-badge-label {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: #6b9b6b;
+  white-space: nowrap;
+}
+
+.target-badge-value {
+  font-size: 0.85rem;
+  color: #333;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+/* ========================================
    CASE STUDY BLOCK (detail pages)
 ======================================== */
 .case-study {
