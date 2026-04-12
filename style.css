@@ -949,6 +949,64 @@ a {
   margin-bottom: 0;
 }
 
+/* ========================================
+   CASE STUDY BLOCK (detail pages)
+======================================== */
+.case-study {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  margin: 24px 0 36px;
+  border: 1px solid #e8e8e8;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.case-item {
+  padding: 22px 20px;
+  border-right: 1px solid #e8e8e8;
+  background: #fafafa;
+}
+
+.case-item:last-child {
+  border-right: none;
+}
+
+.case-label {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: #aaa;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.case-label .fas {
+  color: #6b9b6b;
+  font-size: 0.75rem;
+}
+
+.case-text {
+  font-size: 0.82rem;
+  color: #444;
+  line-height: 1.85;
+}
+
+@media (max-width: 640px) {
+  .case-study {
+    grid-template-columns: 1fr;
+  }
+  .case-item {
+    border-right: none;
+    border-bottom: 1px solid #e8e8e8;
+  }
+  .case-item:last-child {
+    border-bottom: none;
+  }
+}
+
 .btn-link {
   display: inline-flex;
   align-items: center;
