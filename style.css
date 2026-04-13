@@ -553,6 +553,27 @@ a {
   color: #fff;
 }
 
+.contact-email-note {
+  margin-top: 20px;
+  font-size: 0.82rem;
+  color: #888;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.contact-email-link {
+  color: #555;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s;
+}
+
+.contact-email-link:hover {
+  color: #333;
+}
+
 .contact-btn-primary {
   background: #333;
   color: #fff;
