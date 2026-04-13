@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="images/portfolio-icon.png">
+  <title>お問い合わせ | Ridley08's Portfolio</title>
+  <link rel="stylesheet" href="style.css?v=8">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="header" id="header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <img src="images/portfolio-icon.png" alt="logo" class="logo-icon-img">
+        <span>Ridley08's<br>Portfolio</span>
+      </a>
+      <nav class="nav">
+        <a href="index.html#about" class="nav-link">About</a>
+        <a href="index.html#works" class="nav-link">Works</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page-hero">
+    <p class="page-hero-label">CONTACT</p>
+    <h1 class="page-hero-title">お問い合わせ</h1>
+  </div>
+
+  <div class="breadcrumb">
+    <a href="index.html">Home</a>
+    <span>›</span>
+    お問い合わせ
+  </div>
+
+  <div class="contact-page-wrap">
+
+    <p class="contact-page-lead">ご依頼・ご相談・お見積りなど、まずはお気軽にご連絡ください。<br>いただいた内容は最短1営業日以内にご返信いたします。</p>
+
+    <!--
+      【フォーム送信の設定について】
+      このフォームは Formspree（無料）を使用して送信します。
+      以下の手順で設定してください：
+        1. https://formspree.io にアクセスしてアカウントを作成
+        2. 「New Form」でフォームを作成（受信メールに yokoyama.ryo8@gmail.com を設定）
+        3. 発行されたフォームID（例：xabcdef1）をコピー
+        4. 下の action 属性の YOUR_FORM_ID を置き換える
+           例: action="https://formspree.io/f/xabcdef1"
+    -->
+    <form
+      class="contact-form"
+      action="https://formspree.io/f/YOUR_FORM_ID"
+      method="POST"
+    >
+      <!-- スパム対策ハニーポット（非表示） -->
+      <input type="text" name="_gotcha" style="display:none">
+      <!-- メール件名 -->
+      <input type="hidden" name="_subject" value="【ポートフォリオ】お問い合わせ">
+
+      <div class="form-group">
+        <label for="name">
+          お名前
+          <span class="form-badge required">必須</span>
+        </label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="山田 太郎"
+          required
+          autocomplete="name"
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="company">
+          会社名・屋号
+          <span class="form-badge optional">任意</span>
+        </label>
+        <input
+          type="text"
+          id="company"
+          name="company"
+          placeholder="株式会社〇〇 / 個人の場合は空欄で構いません"
+          autocomplete="organization"
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="email">
+          メールアドレス
+          <span class="form-badge required">必須</span>
+        </label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="example@mail.com"
+          required
+          autocomplete="email"
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="message">
+          お問い合わせ内容
+          <span class="form-badge required">必須</span>
+        </label>
+        <textarea
+          id="message"
+          name="message"
+          rows="7"
+          placeholder="ご依頼内容・ご予算・納期など、ご自由にお書きください。"
+          required
+        ></textarea>
+      </div>
+
+      <details class="privacy-details">
+        <summary class="privacy-summary">
+          <i class="fas fa-shield-alt"></i> 個人情報の取り扱いについて
+        </summary>
+        <div class="privacy-body">
+          <p>入力いただいた個人情報（お名前・会社名・メールアドレス・お問い合わせ内容）は、お問い合わせへの回答およびそれに付随する連絡を目的としてのみ使用いたします。ご本人の同意なく第三者へ提供・開示することはありません。また、回答完了後は適切に管理し、不要となった時点で速やかに廃棄いたします。</p>
+        </div>
+      </details>
+
+      <button type="submit" class="form-submit-btn">
+        <i class="fas fa-paper-plane"></i> 送信する
+      </button>
+
+    </form>
+
+    <p class="contact-alt-note">
+      フォームが使えない場合は、直接メールでもご連絡いただけます。<br>
+      <a href="mailto:yokoyama.ryo8@gmail.com" class="contact-email-link">
+        <i class="fas fa-envelope"></i> yokoyama.ryo8@gmail.com
+      </a>
+    </p>
+
+  </div>
+
+  <footer class="footer">
+    <p>&copy; 2026 Ridley08's Portfolio</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

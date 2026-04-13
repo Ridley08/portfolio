@@ -585,6 +585,194 @@ a {
 }
 
 /* ========================================
+   CONTACT PAGE (contact.html)
+======================================== */
+.contact-page-wrap {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 56px 24px 96px;
+}
+
+.contact-page-lead {
+  font-size: 0.88rem;
+  color: #666;
+  line-height: 1.9;
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.form-badge {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 2px 8px;
+  border-radius: 2px;
+}
+
+.form-badge.required {
+  background: #333;
+  color: #fff;
+}
+
+.form-badge.optional {
+  background: #eee;
+  color: #888;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  font-family: 'Noto Sans JP', Arial, sans-serif;
+  font-size: 0.88rem;
+  color: #333;
+  background: #fafafa;
+  transition: border-color 0.2s, background 0.2s;
+  outline: none;
+  resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #6b9b6b;
+  background: #fff;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #bbb;
+}
+
+/* プライバシーポリシー */
+.privacy-details {
+  border: 1px solid #e8e8e8;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.privacy-summary {
+  padding: 12px 16px;
+  font-size: 0.78rem;
+  color: #888;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  list-style: none;
+  user-select: none;
+  transition: background 0.2s;
+}
+
+.privacy-summary::-webkit-details-marker {
+  display: none;
+}
+
+.privacy-summary::after {
+  content: '▼';
+  font-size: 0.55rem;
+  margin-left: auto;
+  opacity: 0.5;
+  transition: transform 0.2s;
+}
+
+details[open] .privacy-summary::after {
+  transform: rotate(180deg);
+}
+
+.privacy-summary:hover {
+  background: #f8f8f8;
+}
+
+.privacy-summary .fas {
+  color: #6b9b6b;
+  font-size: 0.75rem;
+}
+
+.privacy-body {
+  padding: 16px;
+  border-top: 1px solid #e8e8e8;
+  background: #fafafa;
+}
+
+.privacy-body p {
+  font-size: 0.75rem;
+  color: #666;
+  line-height: 1.9;
+  margin: 0;
+}
+
+/* 送信ボタン */
+.form-submit-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px 48px;
+  background: #333;
+  color: #fff;
+  font-family: 'Noto Sans JP', Arial, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background 0.25s, transform 0.2s;
+  align-self: center;
+}
+
+.form-submit-btn:hover {
+  background: #555;
+  transform: translateY(-2px);
+}
+
+.form-submit-btn:active {
+  transform: translateY(0);
+}
+
+/* メール直接連絡 */
+.contact-alt-note {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 0.78rem;
+  color: #aaa;
+  line-height: 2;
+}
+
+.contact-alt-note .contact-email-link {
+  color: #888;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.contact-alt-note .contact-email-link:hover {
+  color: #333;
+}
+
+/* ========================================
    FOOTER
 ======================================== */
 .footer {
