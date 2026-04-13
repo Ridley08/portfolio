@@ -817,6 +817,75 @@ details[open] .privacy-summary::after {
 }
 
 /* ========================================
+   CONTACT CTA
+======================================== */
+.cta-contact {
+  background: linear-gradient(160deg, #2a1f14 0%, #4a3420 60%, #3a2c22 100%);
+  padding: 100px 24px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-contact::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 60%, rgba(180, 130, 70, 0.18) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.cta-contact-inner {
+  position: relative;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.cta-contact-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  color: #c49a5a;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.cta-contact-title {
+  font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+  font-weight: 700;
+  color: #f5efe6;
+  line-height: 1.45;
+  margin-bottom: 20px;
+}
+
+.cta-contact-sub {
+  font-size: 0.92rem;
+  color: #b8a896;
+  line-height: 1.9;
+  margin-bottom: 40px;
+}
+
+.cta-contact-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #c49a5a;
+  color: #1a1008;
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 16px 44px;
+  border-radius: 50px;
+  letter-spacing: 0.04em;
+  transition: background 0.25s, transform 0.2s, box-shadow 0.25s;
+  box-shadow: 0 4px 20px rgba(196, 154, 90, 0.35);
+}
+
+.cta-contact-btn:hover {
+  background: #d9af6e;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(196, 154, 90, 0.5);
+}
+
+/* ========================================
    FOOTER
 ======================================== */
 .footer {
