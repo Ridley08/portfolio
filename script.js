@@ -20,3 +20,17 @@ document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
     window.scrollTo({ top: top, behavior: 'smooth' });
   });
 });
+
+// スクロール時の要素フェードイン（.reveal クラス）
+const revealObserver = new IntersectionObserver(function (entries) {
+  entries.forEach(function (entry) {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.reveal').forEach(function (el) {
+  revealObserver.observe(el);
+});

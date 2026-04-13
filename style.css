@@ -91,12 +91,12 @@ a {
 ======================================== */
 .hero {
   position: relative;
-  height: 75vh;
-  min-height: 420px;
-  background-image: url('images/hero.jpg'),
-    linear-gradient(160deg, #2d3e2f 0%, #4a5f4e 55%, #3d4f52 100%);
+  height: 82vh;
+  min-height: 500px;
+  background-image: url('images/top.png'),
+    linear-gradient(160deg, #2a1f14 0%, #4a3420 55%, #3a2c22 100%);
   background-size: cover;
-  background-position: center 10%;
+  background-position: left center;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -105,7 +105,12 @@ a {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.32);
+  background: linear-gradient(
+    to right,
+    rgba(15, 10, 5, 0.62) 0%,
+    rgba(15, 10, 5, 0.38) 50%,
+    rgba(15, 10, 5, 0.18) 100%
+  );
 }
 
 .hero-content {
@@ -114,6 +119,40 @@ a {
   text-align: center;
   color: #fff;
 }
+
+/* ========================================
+   ANIMATIONS
+======================================== */
+@keyframes heroFadeDown {
+  from { opacity: 0; transform: translateY(-16px); }
+  to   { opacity: 0.88; transform: translateY(0); }
+}
+
+@keyframes heroFadeUp {
+  from { opacity: 0; transform: translateY(26px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes heroFadeBtnUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(34px);
+  transition: opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-d1 { transition-delay: 0.08s; }
+.reveal-d2 { transition-delay: 0.18s; }
+.reveal-d3 { transition-delay: 0.28s; }
+.reveal-d4 { transition-delay: 0.38s; }
 
 .hero-cta-btn {
   display: inline-flex;
@@ -129,6 +168,8 @@ a {
   border-radius: 2px;
   transition: background 0.25s, color 0.25s, transform 0.2s;
   text-shadow: none;
+  animation: heroFadeBtnUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: 1.0s;
 }
 
 .hero-cta-btn:hover {
@@ -141,8 +182,9 @@ a {
   font-weight: 400;
   letter-spacing: 0.08em;
   margin-bottom: 16px;
-  opacity: 0.88;
   text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+  animation: heroFadeDown 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: 0.3s;
 }
 
 .hero-title {
@@ -151,6 +193,8 @@ a {
   letter-spacing: 0.03em;
   line-height: 1.25;
   text-shadow: 0 2px 16px rgba(0, 0, 0, 0.5);
+  animation: heroFadeUp 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: 0.6s;
 }
 
 /* ========================================
