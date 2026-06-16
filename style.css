@@ -31,25 +31,25 @@
 
 [data-theme="light"] {
   --bg: #ffffff;
-  --bg-alt: #f5f3ef;
+  --bg-alt: #f5f5f5;
   --surface: #ffffff;
-  --surface-alt: #faf8f4;
-  --text: #2c2c2c;
-  --text-strong: #1a1a1a;
-  --text-muted: #777068;
-  --text-faint: #a8a29a;
-  --border: #e7e2da;
-  --border-strong: #2c2c2c;
-  --accent: #b87a2e;
-  --accent-strong: #9c6624;
-  --accent-soft: rgba(184, 122, 46, 0.12);
-  --accent-contrast: #fff8ef;
-  --header-bg: rgba(255, 255, 255, 0.62);
+  --surface-alt: #fafafa;
+  --text: #333333;
+  --text-strong: #2a2a2a;
+  --text-muted: #666666;
+  --text-faint: #aaaaaa;
+  --border: #e5e5e5;
+  --border-strong: #333333;
+  --accent: #5f8a5f;
+  --accent-strong: #4c764c;
+  --accent-soft: rgba(95, 138, 95, 0.12);
+  --accent-contrast: #ffffff;
+  --header-bg: rgba(255, 255, 255, 0.7);
   --header-bg-scrolled: rgba(255, 255, 255, 0.92);
   --header-text: #2c2c2c;
   --logo-invert: 0;
-  --footer-bg: #1c1a17;
-  --footer-text: #9a9088;
+  --footer-bg: #2a2a2a;
+  --footer-text: #888888;
   --shadow: rgba(0, 0, 0, 0.08);
   --shadow-strong: rgba(0, 0, 0, 0.16);
   color-scheme: light;
@@ -125,13 +125,48 @@ a {
   border-bottom-color: var(--border);
 }
 
+/* 最上部のメール表示（Contact の上あたり・右上） */
+.header-email {
+  position: absolute;
+  top: 11px;
+  right: 32px;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  color: var(--header-text);
+  opacity: 0.92;
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+  z-index: 1;
+}
+
+.header-email a {
+  color: var(--accent);
+  transition: color 0.2s;
+}
+
+.header-email a:hover {
+  color: var(--accent-strong);
+}
+
+/* スクロールしたら非表示 */
+.header.scrolled .header-email {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px);
+}
+
 .header-inner {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 12px 32px;
+  padding: 26px 32px 14px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  transition: padding 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* スクロール後は通常サイズに縮む */
+.header.scrolled .header-inner {
+  padding: 12px 32px;
 }
 
 .logo {
@@ -1652,7 +1687,13 @@ details[open] .privacy-summary::after {
 
 @media (max-width: 640px) {
   .header-inner {
-    padding: 12px 20px;
+    padding: 14px 20px;
+  }
+  .header.scrolled .header-inner {
+    padding: 10px 20px;
+  }
+  .header-email {
+    display: none;
   }
   .nav {
     gap: 18px;
