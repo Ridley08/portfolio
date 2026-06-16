@@ -445,6 +445,21 @@ a {
   padding: 96px 24px;
 }
 
+/* ダークモード時は Skill セクションを明るくしてメリハリを出す */
+[data-theme="dark"] .service {
+  background: #2a231b;
+}
+
+[data-theme="dark"] .service-card {
+  background: #352c21;
+  border-color: #463b2b;
+}
+
+[data-theme="dark"] .about-profile {
+  background: #352c21;
+  border-color: #463b2b;
+}
+
 .service-grid {
   max-width: 1080px;
   margin: 0 auto;
