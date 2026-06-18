@@ -70,6 +70,18 @@ if (header) {
 })();
 
 // ========================================
+//  Back to top
+// ========================================
+(function () {
+  const btn = document.getElementById('backToTop');
+  if (!btn) return;
+  btn.addEventListener('click', function () {
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
+  });
+})();
+
+// ========================================
 //  ナビリンクのスムーススクロール（href="#xxx" 対応）
 // ========================================
 document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {

@@ -7,7 +7,7 @@
   <title>Webサイト | Ryo Yokoyama's Portfolio</title>
   <script>(function(){try{var t=localStorage.getItem('theme');if(t!=='light'&&t!=='dark'){t='dark';}document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();</script>
 
-  <link rel="stylesheet" href="style.css?v=13">
+  <link rel="stylesheet" href="style.css?v=14">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
@@ -25,6 +25,7 @@
       <nav class="nav">
         <a href="index.html#about" class="nav-link">About</a>
         <a href="index.html#works" class="nav-link">Works</a>
+        <a href="index.html#skills" class="nav-link">Skills</a>
         <a href="contact.html" class="nav-link">Contact</a>
       
       <button class="theme-toggle" id="themeToggle" type="button" aria-label="テーマ切り替え"><i class="fas fa-moon"></i></button>
@@ -119,9 +120,13 @@
   </div>
 
   <footer class="footer">
-    <p>&copy; 2026 Ryo Yokoyama's Portfolio</p>
+    <div class="footer-inner">
+      <span class="footer-side"></span>
+      <p class="footer-copy">&copy; 2026 Ryo Yokoyama's Portfolio</p>
+      <button class="back-to-top" id="backToTop" type="button">Back to top <i class="fas fa-arrow-up"></i></button>
+    </div>
   </footer>
 
-  <script src="script.js?v=12"></script>
+  <script src="script.js?v=14"></script>
 </body>
 </html>
