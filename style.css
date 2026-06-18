@@ -282,32 +282,56 @@ a {
 ======================================== */
 .hero {
   position: relative;
-  min-height: 90vh;
+  min-height: 92vh;
   display: flex;
   align-items: center;
-  padding: 130px 24px 70px;
+  padding: 140px 24px 90px;
   overflow: hidden;
+  background-image: url('images/top.png');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+/* 画像をやや沈ませつつ、左を暗く・下を背景色へフェード */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(to right, rgba(12, 9, 5, 0.86) 0%, rgba(12, 9, 5, 0.5) 42%, rgba(12, 9, 5, 0.28) 100%),
+    linear-gradient(to bottom, rgba(12, 9, 5, 0.35) 0%, rgba(12, 9, 5, 0.1) 35%, rgba(12, 9, 5, 0.2) 60%, var(--bg) 100%);
 }
 
 .hero-inner {
+  position: relative;
+  z-index: 1;
   max-width: 1200px;
   margin: 0 auto;
   width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1.05fr;
-  gap: 48px;
-  align-items: center;
 }
 
 .hero-text {
-  min-width: 0;
+  max-width: 560px;
+}
+
+/* ヒーローは画像上のため常に明色テキスト */
+.hero-catchcopy {
+  color: rgba(255, 255, 255, 0.88);
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+}
+
+.hero-title {
+  color: #ffffff;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.55);
 }
 
 .hero-desc {
   font-size: 0.92rem;
-  color: var(--text-muted);
+  color: rgba(255, 255, 255, 0.82);
   line-height: 1.95;
   margin: 22px 0 36px;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
 }
 
 .hero-btns {
@@ -316,30 +340,27 @@ a {
   flex-wrap: wrap;
 }
 
-.hero-visual {
-  position: relative;
+.hero .btn-outline {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.6);
 }
 
-.hero-visual-img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 18px;
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
-  border: 1px solid var(--panel-border);
+.hero .btn-outline:hover {
+  color: var(--accent);
+  border-color: var(--accent);
 }
 
 /* Scroll-down cue（左端・縦） */
 .hero-scroll-cue {
   position: absolute;
-  bottom: 70px;
+  bottom: 90px;
   left: 28px;
   z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  color: var(--text-muted);
+  color: rgba(255, 255, 255, 0.7);
   font-size: 0.58rem;
   letter-spacing: 0.3em;
   writing-mode: vertical-rl;
@@ -349,18 +370,18 @@ a {
 .hero-scroll-cue .cue-line {
   width: 1px;
   height: 50px;
-  background: linear-gradient(to bottom, var(--text-muted), transparent);
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.7), transparent);
   animation: cueDrop 1.8s ease-in-out infinite;
 }
 
 @media (max-width: 860px) {
-  .hero-inner {
-    grid-template-columns: 1fr;
-    gap: 36px;
-    text-align: center;
+  .hero {
+    padding: 120px 24px 70px;
+    background-position: 30% top;
   }
-  .hero-btns { justify-content: center; }
-  .hero-visual { order: -1; max-width: 480px; margin: 0 auto; }
+  .hero-text {
+    max-width: 100%;
+  }
   .hero-scroll-cue { display: none; }
 }
 
