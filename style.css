@@ -232,7 +232,8 @@ a {
 .nav-link::after {
   content: '';
   position: absolute;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   bottom: -5px;
   width: 0;
   height: 1.5px;
@@ -299,6 +300,9 @@ a {
   left: 24%;
   pointer-events: none;
   z-index: 0;
+  will-change: transform;
+  transform: scale(1.04);
+  transition: transform 0.35s ease-out;
   background-image: url('images/top.png');
   background-size: cover;
   background-position: 32% top;
@@ -327,7 +331,7 @@ a {
 
 .hero-inner {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   max-width: 1200px;
   margin: 0 auto;
   width: 100%;
@@ -337,15 +341,17 @@ a {
   max-width: 560px;
 }
 
-/* ヒーローは画像上のため常に明色テキスト */
+/* ヒーローは画像上のため常に明色テキスト（時差エントランス付き） */
 .hero-catchcopy {
   color: rgba(255, 255, 255, 0.88);
   text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+  animation: heroFadeDown 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.25s both;
 }
 
 .hero-title {
   color: #ffffff;
   text-shadow: 0 2px 18px rgba(0, 0, 0, 0.55);
+  animation: heroFadeUp 1s cubic-bezier(0.22, 1, 0.36, 1) 0.5s both;
 }
 
 .hero-desc {
@@ -354,6 +360,11 @@ a {
   line-height: 1.95;
   margin: 22px 0 36px;
   text-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
+  animation: heroFadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.72s both;
+}
+
+.hero-btns {
+  animation: heroFadeBtnUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.95s both;
 }
 
 .hero-btns {
@@ -532,6 +543,16 @@ a {
   border-radius: 2px;
 }
 
+/* reveal対象のタイトルは、表示時に下線が中央から描画される */
+.section-title.reveal::after {
+  transform: scaleX(0);
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.25s;
+}
+
+.section-title.reveal.visible::after {
+  transform: scaleX(1);
+}
+
 /* ========================================
    SERVICE / SKILL
 ======================================== */
@@ -549,6 +570,7 @@ a {
 }
 
 .service-card {
+  position: relative;
   display: flex;
   flex-direction: column;
   text-align: left;
@@ -844,6 +866,7 @@ a {
 }
 
 .works-category-card {
+  position: relative;
   display: block;
   background: var(--panel);
   backdrop-filter: blur(10px);
@@ -873,6 +896,13 @@ a {
   color: #fff;
   position: relative;
   overflow: hidden;
+  background-size: 170% 170%;
+  background-position: 0% 50%;
+  transition: background-position 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.works-category-card:hover .works-category-thumb {
+  background-position: 100% 50%;
 }
 
 .works-category-thumb i {
@@ -1526,6 +1556,7 @@ details[open] .privacy-summary::after {
 }
 
 .gallery-card {
+  position: relative;
   display: block;
   background: var(--surface);
   border: 1px solid var(--border);
@@ -2019,6 +2050,126 @@ details[open] .privacy-summary::after {
 }
 
 /* ========================================
+   INTERACTIVE POLISH
+======================================== */
+
+/* --- ヒーローの舞い上がるボケ粒子 --- */
+.hero-particles {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.hero-particles span {
+  position: absolute;
+  bottom: -24px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #eec584;
+  filter: blur(1px);
+  opacity: 0;
+  animation: particleRise 10s linear infinite;
+}
+
+@keyframes particleRise {
+  0%   { transform: translateY(0) translateX(0); opacity: 0; }
+  12%  { opacity: 0.4; }
+  60%  { opacity: 0.22; }
+  100% { transform: translateY(-95vh) translateX(24px); opacity: 0; }
+}
+
+.hero-particles span:nth-child(1) { left: 8%;  width: 5px;  height: 5px;  animation-duration: 11s; animation-delay: 0s; }
+.hero-particles span:nth-child(2) { left: 16%; width: 8px;  height: 8px;  animation-duration: 13s; animation-delay: 2.2s; filter: blur(2px); }
+.hero-particles span:nth-child(3) { left: 27%; width: 4px;  height: 4px;  animation-duration: 9s;  animation-delay: 4.5s; }
+.hero-particles span:nth-child(4) { left: 38%; width: 7px;  height: 7px;  animation-duration: 14s; animation-delay: 1.1s; filter: blur(2px); }
+.hero-particles span:nth-child(5) { left: 55%; width: 5px;  height: 5px;  animation-duration: 10s; animation-delay: 6s; }
+.hero-particles span:nth-child(6) { left: 68%; width: 9px;  height: 9px;  animation-duration: 15s; animation-delay: 3.4s; filter: blur(3px); }
+.hero-particles span:nth-child(7) { left: 82%; width: 4px;  height: 4px;  animation-duration: 9.5s; animation-delay: 7.2s; }
+.hero-particles span:nth-child(8) { left: 92%; width: 6px;  height: 6px;  animation-duration: 12s; animation-delay: 5s; filter: blur(2px); }
+
+/* --- カードの3Dチルト＋光沢（JSが --rx/--ry/--mx/--my を更新） --- */
+.tilt {
+  will-change: transform;
+}
+
+.tilt:hover {
+  transform: perspective(750px) translateY(-6px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+  transition: transform 0.12s ease-out, border-color 0.3s, box-shadow 0.3s;
+}
+
+/* カーソル位置を追う光沢 */
+.service-card::before,
+.works-category-card::before,
+.gallery-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: inherit;
+  background: radial-gradient(
+    460px circle at var(--mx, 50%) var(--my, 50%),
+    rgba(235, 189, 114, 0.14),
+    transparent 46%
+  );
+  opacity: 0;
+  transition: opacity 0.35s;
+  pointer-events: none;
+}
+
+.service-card:hover::before,
+.works-category-card:hover::before,
+.gallery-card:hover::before {
+  opacity: 1;
+}
+
+/* --- カーソルグロー（ダークテーマ・ファインポインタのみ / JSが生成） --- */
+.cursor-glow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 540px;
+  height: 540px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 4;
+  background: radial-gradient(circle, rgba(233, 190, 120, 0.09) 0%, transparent 60%);
+  mix-blend-mode: screen;
+  transform: translate(-50%, -50%);
+}
+
+[data-theme="light"] .cursor-glow {
+  display: none;
+}
+
+@media (pointer: coarse) {
+  .cursor-glow { display: none; }
+}
+
+/* --- 技術バッジのポップイン --- */
+.about-profile .pb {
+  opacity: 0;
+}
+
+.about-profile.visible .pb {
+  animation: badgePop 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+.about-profile.visible .pb:nth-child(1) { animation-delay: 0.25s; }
+.about-profile.visible .pb:nth-child(2) { animation-delay: 0.33s; }
+.about-profile.visible .pb:nth-child(3) { animation-delay: 0.41s; }
+.about-profile.visible .pb:nth-child(4) { animation-delay: 0.49s; }
+.about-profile.visible .pb:nth-child(5) { animation-delay: 0.57s; }
+.about-profile.visible .pb:nth-child(6) { animation-delay: 0.65s; }
+
+@keyframes badgePop {
+  from { opacity: 0; transform: translateY(12px) scale(0.5); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* ========================================
    REDUCED MOTION
 ======================================== */
 @media (prefers-reduced-motion: reduce) {
@@ -2034,7 +2185,12 @@ details[open] .privacy-summary::after {
     opacity: 1 !important;
     transform: none !important;
   }
-  .hero-scroll-cue {
+  .about-profile .pb {
+    opacity: 1 !important;
+  }
+  .hero-scroll-cue,
+  .hero-particles,
+  .cursor-glow {
     display: none;
   }
 }
