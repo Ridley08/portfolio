@@ -3,189 +3,187 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="フリーランスWeb制作者、Ryo Yokoyamaのポートフォリオ。Webサイト、アプリケーション、Illustrator・Photoshopによるビジュアル制作をご紹介します。">
   <link rel="icon" type="image/png" href="images/portfolio-icon.png">
   <title>Ryo Yokoyama's Portfolio</title>
   <script>(function(){try{var t=localStorage.getItem('theme');if(t!=='light'&&t!=='dark'){t='dark';}document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();</script>
-
-  <link rel="stylesheet" href="style.css?v=17">
+  <link rel="preload" as="image" href="images/top.png">
+  <link rel="stylesheet" href="style.css?v=19">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="home-page">
+  <a class="skip-link" href="#main">本文へ移動</a>
   <div class="scroll-progress" id="scrollProgress"></div>
 
-  <!-- ===== HEADER ===== -->
   <header class="header" id="header">
-    <div class="header-email">email: <a href="mailto:yokoyama.ryo8@gmail.com">yokoyama.ryo8@gmail.com</a></div>
     <div class="header-inner">
-      <a href="#" class="logo">
-        <img src="images/portfolio-icon.png" alt="logo" class="logo-icon-img">
+      <a href="#top" class="logo">
+        <img src="images/portfolio-icon.png" alt="" class="logo-icon-img" width="36" height="36">
         <span>Ryo Yokoyama's<br>Portfolio</span>
       </a>
-      <nav class="nav">
-        <a href="#about" class="nav-link">About</a>
+      <nav class="nav" aria-label="メインナビゲーション">
         <a href="#works" class="nav-link">Works</a>
         <a href="#skills" class="nav-link">Skills</a>
-        <a href="contact.html" class="nav-link">Contact</a>
-
-      <button class="theme-toggle" id="themeToggle" type="button" aria-label="テーマ切り替え"><i class="fas fa-moon"></i></button>
-    </nav>
+        <a href="#about" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link nav-contact">Contact <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="テーマ切り替え"><i class="fas fa-moon" aria-hidden="true"></i></button>
+      </nav>
     </div>
   </header>
 
-  <!-- ===== HERO ===== -->
-  <section class="hero">
-    <div class="hero-overlay"></div>
-    <div class="hero-particles" aria-hidden="true">
-      <span></span><span></span><span></span><span></span>
-      <span></span><span></span><span></span><span></span>
-    </div>
-    <div class="hero-inner">
-      <div class="hero-text">
-        <p class="hero-catchcopy">静かに、確実に、伝わるWebをつくる。</p>
-        <h1 class="hero-title">Ryo Yokoyama's<br>Portfolio</h1>
-        <p class="hero-desc">フロントエンド実装とビジュアル制作を中心に、<br>Webサイトを一から形にしています。</p>
-        <div class="hero-btns">
-          <a href="#works" class="btn-primary"><i class="fas fa-paper-plane"></i> プロジェクトを見る</a>
-          <a href="contact.html" class="btn-outline">お問い合わせ</a>
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <img class="hero-art" src="images/top.png" alt="ハシビロコウがパソコンに向かう、にぎやかなカフェのイラスト" width="2752" height="1536" fetchpriority="high">
+      <div class="hero-inner">
+        <div class="hero-identity">
+          <p class="hero-kicker">WEB DESIGN &amp; DEVELOPMENT</p>
+          <h1 class="hero-title" id="hero-title">Ryo Yokoyama's<br><em>Portfolio.</em></h1>
+        </div>
+        <div class="hero-intro">
+          <p class="hero-catchcopy">静かに、確実に。<br>想いが伝わるものづくりを。</p>
+          <p class="hero-desc">Webサイトから、日々を彩るビジュアルまで。<br>デザインとコードで、一つひとつ形にします。</p>
+          <div class="hero-btns">
+            <a href="#works" class="btn-primary">制作実績を見る <i class="fas fa-arrow-down" aria-hidden="true"></i></a>
+            <a href="contact.html" class="hero-contact">お問い合わせ <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+          </div>
         </div>
       </div>
-    </div>
-    <a href="#skills" class="hero-scroll-cue" aria-label="下へスクロール">
-      <span>SCROLL</span>
-      <span class="cue-line"></span>
-    </a>
-  </section>
-
-  <!-- ===== SKILL ===== -->
-  <section class="service" id="skills">
-    <h2 class="section-title reveal">Skill</h2>
-    <div class="service-grid">
-
-      <a href="works-website.html" class="service-card reveal reveal-d1">
-        <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
-        <h3 class="service-name">コーディング</h3>
-        <p class="service-label">CODING</p>
-        <p class="service-desc">表示速度を意識した、ユーザーの体験に寄り添う高品質なマークアップ・コーディングを実装します。</p>
-        <span class="service-more">MORE <i class="fas fa-arrow-right"></i></span>
-      </a>
-
-      <a href="works-website.html" class="service-card reveal reveal-d2">
-        <div class="service-icon"><i class="fas fa-desktop"></i></div>
-        <h3 class="service-name">Webデザイン</h3>
-        <p class="service-label">WEB DESIGN</p>
-        <p class="service-desc">目的に合わせた情報設計で、使いやすく伝わるWebサイトをデザインします。</p>
-        <span class="service-more">MORE <i class="fas fa-arrow-right"></i></span>
-      </a>
-
-      <a href="works-image.html" class="service-card reveal reveal-d3">
-        <div class="service-icon"><i class="fas fa-paint-brush"></i></div>
-        <h3 class="service-name">画像制作</h3>
-        <p class="service-label">IMAGE CREATION</p>
-        <p class="service-desc">視覚的な訴求力を高めるバナーやアイコンなど、ブランディングに最適な画像を制作します。</p>
-        <span class="service-more">MORE <i class="fas fa-arrow-right"></i></span>
-      </a>
-
-      <a href="works-webapp.html" class="service-card reveal reveal-d4">
-        <div class="service-icon"><i class="fas fa-code"></i></div>
-        <h3 class="service-name">フロントエンド</h3>
-        <p class="service-label">FRONTEND</p>
-        <p class="service-desc">JavaScript・Reactで動きのあるUI/UXを実現し、快適な操作体験を提供します。</p>
-        <span class="service-more">MORE <i class="fas fa-arrow-right"></i></span>
-      </a>
-
-    </div>
-
-    <div class="about-profile reveal" id="about">
-      <div class="about-profile-avatar">
-        <img src="images/portfolio-icon.png" alt="Ryo Yokoyama" class="about-avatar-img">
+      <div class="hero-foot">
+        <span>DESIGN / CODE / VISUAL</span>
+        <a href="#works" aria-label="制作実績へスクロール">SCROLL <i class="fas fa-arrow-down" aria-hidden="true"></i></a>
       </div>
-      <div class="about-profile-body">
-        <p class="about-profile-name">Ryo Yokoyama</p>
-        <p class="about-profile-tagline">フリーランス Web制作者</p>
-        <p class="about-profile-text">HTML / CSS / JavaScript によるフロントエンド実装と、Photoshop・Illustrator を活用したビジュアル制作が得意です。「作って終わり」ではなく、見る人に成果が伝わるものづくりを意識しています。</p>
+    </section>
+
+    <section class="works section-band" id="works" aria-labelledby="works-title">
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-kicker">01 / SELECTED WORKS</p>
+          <h2 class="section-title" id="works-title">Works<span>制作実績</span></h2>
+        </div>
+        <p class="section-note">考えて、つくって、かたちにしたもの。<br>3つの分野からご覧いただけます。</p>
       </div>
-      <div class="profile-badges" aria-label="使用技術">
-        <span class="pb pb-html">HTML</span>
-        <span class="pb pb-css">CSS</span>
-        <span class="pb pb-js">JS</span>
-        <span class="pb pb-react">React</span>
-        <span class="pb pb-ps">Ps</span>
-        <span class="pb pb-ai">Ai</span>
+      <div class="works-category-grid">
+        <a href="works-website.html" class="works-category-card reveal">
+          <div class="works-category-thumb cat-website">
+            <img src="images/hashibiro.jpg" alt="はしびろ歯科医院のWebサイト" width="1087" height="771" loading="lazy">
+            <span class="cat-count">5 works</span>
+          </div>
+          <div class="works-category-info">
+            <p class="cat-label">WEB DESIGN &amp; DEVELOPMENT</p>
+            <div class="work-title-row"><h3>Webサイト</h3><i class="fas fa-arrow-right" aria-hidden="true"></i></div>
+            <p class="work-summary">LP・コーポレート・ポートフォリオ</p>
+          </div>
+        </a>
+        <a href="works-image.html" class="works-category-card reveal reveal-d1">
+          <div class="works-category-thumb cat-image">
+            <div class="visual-preview">
+              <img src="images/illustrator_POP1.png" alt="「日々の道具展」のPOP画像" width="1054" height="1492" loading="lazy">
+              <img src="images/thumbnail01.jpg" alt="YouTubeサムネイルの制作作品" loading="lazy">
+            </div>
+            <span class="cat-count">5 works</span>
+          </div>
+          <div class="works-category-info">
+            <p class="cat-label">GRAPHIC &amp; VISUAL DESIGN</p>
+            <div class="work-title-row"><h3>制作画像</h3><i class="fas fa-arrow-right" aria-hidden="true"></i></div>
+            <p class="work-summary">バナー・サムネイル・POP・アイコン</p>
+          </div>
+        </a>
+        <a href="works-webapp.html" class="works-category-card reveal reveal-d2">
+          <div class="works-category-thumb cat-webapp">
+            <img src="images/quiz.jpg" alt="Forest Academy Quizの画面" loading="lazy">
+            <span class="cat-count">2 works</span>
+          </div>
+          <div class="works-category-info">
+            <p class="cat-label">WEB APPLICATION</p>
+            <div class="work-title-row"><h3>Webアプリケーション</h3><i class="fas fa-arrow-right" aria-hidden="true"></i></div>
+            <p class="work-summary">ToDoアプリ・クイズアプリ</p>
+          </div>
+        </a>
       </div>
-    </div>
+    </section>
 
-  </section>
-
-  <!-- ===== WORKS ===== -->
-  <section class="works" id="works">
-    <div class="works-head reveal">
-      <span class="works-dots"></span>
-      <h2 class="section-title works-title">Works</h2>
-      <span class="works-dots"></span>
-    </div>
-    <div class="works-category-grid">
-
-      <a href="works-website.html" class="works-category-card reveal reveal-d1">
-        <div class="works-category-thumb cat-website">
-          <i class="fas fa-globe"></i>
-          <span class="cat-count">5 works</span>
+    <section class="service section-band" id="skills" aria-labelledby="skills-title">
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-kicker">02 / WHAT I DO</p>
+          <h2 class="section-title" id="skills-title">Skills<span>できること</span></h2>
         </div>
-        <div class="works-category-info">
-          <p class="cat-label">LP・コーポレート・ポートフォリオ</p>
-          <h3>Webサイト</h3>
-          <span class="works-view">VIEW <i class="fas fa-arrow-right"></i></span>
-        </div>
-      </a>
-
-      <a href="works-image.html" class="works-category-card reveal reveal-d2">
-        <div class="works-category-thumb cat-image">
-          <i class="fas fa-images"></i>
-          <span class="cat-count">5 works</span>
-        </div>
-        <div class="works-category-info">
-          <p class="cat-label">バナー・アイコン・ビジュアル</p>
-          <h3>制作画像</h3>
-          <span class="works-view">VIEW <i class="fas fa-arrow-right"></i></span>
-        </div>
-      </a>
-
-      <a href="works-webapp.html" class="works-category-card reveal reveal-d3">
-        <div class="works-category-thumb cat-webapp">
-          <i class="fas fa-window-maximize"></i>
-          <span class="cat-count">2 works</span>
-        </div>
-        <div class="works-category-info">
-          <p class="cat-label">ToDoアプリ・クイズアプリ</p>
-          <h3>Webアプリケーション</h3>
-          <span class="works-view">VIEW <i class="fas fa-arrow-right"></i></span>
-        </div>
-      </a>
-
-    </div>
-  </section>
-
-  <!-- ===== CONTACT CTA ===== -->
-  <section class="cta-contact">
-    <div class="cta-contact-inner reveal">
-      <div class="cta-icon"><i class="fas fa-paper-plane"></i></div>
-      <div class="cta-text">
-        <h2 class="cta-contact-title">ご連絡はこちらから。</h2>
-        <p class="cta-contact-sub">作品へのご感想・ご質問など、お気軽にご連絡ください。</p>
+        <p class="section-note">見た目と使いやすさ、その両方を。<br>デザインから実装まで、丁寧に取り組みます。</p>
       </div>
-      <a href="contact.html" class="cta-contact-btn">お問い合わせはこちら <i class="fas fa-arrow-right"></i></a>
-    </div>
-  </section>
+      <div class="service-grid">
+        <a href="works-website.html" class="service-card reveal">
+          <div class="service-top"><i class="fas fa-laptop-code" aria-hidden="true"></i><span>01</span></div>
+          <h3 class="service-name">コーディング</h3>
+          <p class="service-label">CODING</p>
+          <p class="service-desc">デザインを丁寧に再現し、読みやすく、使いやすいWebサイトへ。表示速度とレスポンシブ対応も大切にしています。</p>
+          <span class="service-more">制作実績を見る <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+        </a>
+        <a href="works-website.html" class="service-card reveal reveal-d1">
+          <div class="service-top"><i class="fas fa-desktop" aria-hidden="true"></i><span>02</span></div>
+          <h3 class="service-name">Webデザイン</h3>
+          <p class="service-label">WEB DESIGN</p>
+          <p class="service-desc">目的に合わせて情報を整理し、伝わる構成を考えます。ブランドらしさと、迷わず使える導線を両立させます。</p>
+          <span class="service-more">制作実績を見る <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+        </a>
+        <a href="works-image.html" class="service-card reveal reveal-d2">
+          <div class="service-top"><i class="fas fa-pen-nib" aria-hidden="true"></i><span>03</span></div>
+          <h3 class="service-name">画像制作</h3>
+          <p class="service-label">VISUAL DESIGN</p>
+          <p class="service-desc">Illustrator・Photoshopを使い、バナー、POP、アイコンを制作。文字組みや配色で、伝えたい印象を形にします。</p>
+          <span class="service-more">制作実績を見る <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+        </a>
+        <a href="works-webapp.html" class="service-card reveal reveal-d3">
+          <div class="service-top"><i class="fas fa-code" aria-hidden="true"></i><span>04</span></div>
+          <h3 class="service-name">フロントエンド</h3>
+          <p class="service-label">FRONTEND</p>
+          <p class="service-desc">JavaScript・Reactによる動きのあるUIを実装。触れていて心地よく、毎日使いたくなる体験を目指します。</p>
+          <span class="service-more">制作実績を見る <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+        </a>
+      </div>
+    </section>
 
-  <!-- ===== FOOTER ===== -->
+    <section class="about-section section-band" id="about" aria-labelledby="about-title">
+      <div class="about-layout">
+        <div class="about-photo reveal">
+          <img src="images/hero.jpg" alt="サイトのモチーフにしているハシビロコウ" width="4272" height="2848" loading="lazy">
+          <span>MY FAVORITE / SHOEBILL</span>
+        </div>
+        <div class="about-copy reveal">
+          <p class="section-kicker">03 / A LITTLE ABOUT ME</p>
+          <h2 class="section-title" id="about-title">About<span>私について</span></h2>
+          <p class="about-name">Ryo Yokoyama</p>
+          <p class="about-role">フリーランス Web制作者</p>
+          <p class="about-text">HTML / CSS / JavaScriptによるフロントエンド実装と、Photoshop・Illustratorを活用したビジュアル制作に取り組んでいます。</p>
+          <p class="about-text">「作って終わり」ではなく、見る人に想いが伝わることを大切に。静かに、じっくりと、一つひとつのものづくりに向き合います。</p>
+          <ul class="tool-list" aria-label="使用技術とツール">
+            <li>HTML</li><li>CSS</li><li>JavaScript</li><li>React</li><li>Photoshop</li><li>Illustrator</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-contact">
+      <div class="cta-contact-inner reveal">
+        <div class="cta-text">
+          <p class="section-kicker">LET'S TALK</p>
+          <h2 class="cta-contact-title">お話を聞かせてください。</h2>
+          <p class="cta-contact-sub">制作のご相談も、作品へのご感想も。<br>お気軽にご連絡ください。</p>
+        </div>
+        <a href="contact.html" class="cta-contact-btn">お問い合わせ <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+      </div>
+    </section>
+  </main>
+
   <footer class="footer">
     <div class="footer-inner">
-      <span class="footer-side"></span>
+      <a class="footer-email" href="mailto:yokoyama.ryo8@gmail.com">yokoyama.ryo8@gmail.com</a>
       <p class="footer-copy">&copy; 2026 Ryo Yokoyama's Portfolio</p>
-      <button class="back-to-top" id="backToTop" type="button">Back to top <i class="fas fa-arrow-up"></i></button>
+      <button class="back-to-top" id="backToTop" type="button" title="ページ上部へ戻る">Back to top <i class="fas fa-arrow-up" aria-hidden="true"></i></button>
     </div>
   </footer>
-
-  <script src="script.js?v=17"></script>
+  <script src="script.js?v=19"></script>
 </body>
 </html>
