@@ -2047,6 +2047,22 @@ details[open] .privacy-summary::after {
   .nav-link {
     font-size: 0.8rem;
   }
+  .image-work-page .header-inner {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .image-work-page .nav {
+    width: 100%;
+    justify-content: space-between;
+    gap: 8px;
+  }
+  .image-work-page .theme-toggle {
+    flex-shrink: 0;
+    margin-left: 0;
+  }
+  .image-work-page .page-hero {
+    padding-top: 152px;
+  }
 }
 
 /* ========================================
