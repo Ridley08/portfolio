@@ -7,7 +7,7 @@ const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const toggle = document.getElementById('themeToggle');
   if (!toggle) return;
   function syncIcon() {
-    const isDark = root.getAttribute('data-theme') !== 'light';
+    const isDark = root.getAttribute('data-theme') === 'dark';
     const icon = toggle.querySelector('i');
     if (icon) icon.className = isDark ? 'fas fa-moon' : 'fas fa-sun';
     const label = isDark ? 'ライトモードに切り替え' : 'ダークモードに切り替え';
@@ -18,7 +18,7 @@ const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   toggle.addEventListener('click', function () {
     const next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
     root.setAttribute('data-theme', next);
-    try { localStorage.setItem('theme', next); } catch (e) {}
+    try { localStorage.setItem('portfolio-theme-v2', next); } catch (e) {}
     syncIcon();
   });
 })();
